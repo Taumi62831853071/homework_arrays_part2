@@ -1,15 +1,15 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
 
-
+        int summPerMonth = 0;
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++)  {
             arr[i] = random.nextInt(100_000) + 100_000;
-                System.out.println("Сумма трат за месяц составила " + arr[i] + " рублей");
+                summPerMonth = summPerMonth + arr[i];
         }
+        System.out.println("Сумма трат за месяц составила " + summPerMonth + " рублей");
+
         int minExpenditure = 200000;
         for (int i = 0; i < arr.length; i++) {
             final int current = arr[i];
@@ -32,8 +32,8 @@ public class Main {
         int medExpenditure = 0;
         for (int i = 0; i < arr.length; i++) {
             summ = summ + arr[i];
-            medExpenditure = summ / arr.length;
         }
+        medExpenditure = summ / arr.length;
         System.out.println("Средняя сумма трат за день составила " + medExpenditure + " рублей");
 
         char [] reverseFullName = {'n','a','v','I',' ','v','o','n','a','v','I'};
